@@ -2,7 +2,7 @@
 A gulp boilerplate, built inside of Craft CMS.
 
 ## Getting Started
-If you don't already have node.js installed, please do so here: https://nodejs.org/en/
+If you don't already have node.js installed, please do so here: [nodejs.org](https://nodejs.org/en/)
 
 Once you have node installed, run the following command in Terminal to install gulp through npm (node package manager): `sudo npm install gulp -g`
 
@@ -15,11 +15,11 @@ After running this command, you will get prompted to enter some information, and
 Now that we've initialized npm and created a project, we can install gulp to the project: `npm install gulp --save-dev`.
 
 Now that gulp is set up, you need to install a couple of packages via npm. Run the following commands in your terminal:
-`npm install gulp-path`
-`npm install --save-dev gulp-autoprefixer`
-`npm install gulp-clean-css --save-dev`
+`npm install --save-dev gulp-path gulp-autoprefixer gulp-clean-css`
 
-Now it's time to choose. If you're going to be using gulp to compile SASS files (.scss), run this command: `npm install gulp-sass --save-dev`. If you're going to be using gulp to compile LESS files (.less) run this command: `npm install gulp-less --save-dev`
+Now it's time to choose.
+* If you're going to be using gulp to compile SASS files (.scss), run this command: `npm install gulp-sass --save-dev`.
+* If you're going to be using gulp to compile LESS files (.less) run this command: `npm install gulp-less --save-dev`
 
 
 ###Configuring gulpfile.js
