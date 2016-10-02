@@ -1,6 +1,3 @@
-# craft-gulp-boilerplate
-A gulp boilerplate, built inside of Craft CMS.
-
 ## Getting Started
 If you don't already have node.js installed, please do so here: [nodejs.org](https://nodejs.org/en/)
 
@@ -12,27 +9,20 @@ Navigate in Terminal to the main project folder you'd like to run gulp on/in. Th
 
 After running this command, you will get prompted to enter some information, and then verify by hitting return (enter).
 
-Now that we've initialized npm and created a project, we can install gulp to the project: `npm install gulp --save-dev`.
+Now that we've initialized npm and created a project, we can install gulp (and the other packages that we'll need) to the project: `npm install gulp --save-dev``npm install --save-dev gulp gulp-path gulp-autoprefixer gulp-clean-css gulp-less`.
 
-Now that gulp is set up, you need to install a couple of packages via npm. Run the following commands in your terminal:
-`npm install --save-dev gulp-path gulp-autoprefixer gulp-clean-css`
+###Using Gulp
+If you dig into `gulpfile.js` you'll see I have 2 tasks created.
 
-Now it's time to choose.
-* If you're going to be using gulp to compile SASS files (.scss), run this command: `npm install gulp-sass --save-dev`.
-* If you're going to be using gulp to compile LESS files (.less) run this command: `npm install gulp-less --save-dev`
+Task #1: `lessToCleanCSS` - This task compiles LESS to CSS, auto-prefixes your code for the last 2 versions of all browsers (and IE8 and IE9), minifies the CSS completely, and then outputs the CSS to the `public/assets/css` folder. You can run this task with the command `gulp lessToCleanCSS`.
 
-
-###Configuring gulpfile.js
-If you take a look at the project files, you'll see 2 files containing gulpfile. gulpfile-sass.js and gulpfile-less.js. You can remove the file type (either less or sass) that you're not going to use, and rename the remaining file to gulpfile.js. **This is important**: Gulp will not work correctly unless the gulpfile is named correctly.
-
-###Configuring the File Structure
-Inside of public/assets/ you'll see there are 3 folders. You can remove one or the other of the SASS and LESS folders.
+Task #2: This is just a `watch` task for the `lessToCleanCSS` task. So if you run this task (`gulp less-watch`), it will watch the `less` folder for any file changes, and automatically run the `lessToCleanCSS` task if any files change.
 
 ###Running Craft
-If you try to actually run craft from this repo, you'll notice nothing works. You need to download a fresh copy of Craft CMS from craftcms.com, and drop the `/app` folder from the installation you just downloaded, inside of the  `/craft` folder of this repo.
+If you try to run craft from this repo, you'll notice nothing works. You need to download a fresh copy of Craft CMS from craftcms.com, and drop the `/app` folder from the installation you just downloaded, inside of the  `/craft` folder of this repo.
 
 ##Roadmap
-<li>JS concat + compiling (near future)</li>
-<li>Image optimization (possible)</li>
+<li>JS concat + compiling (coming in the near future)</li>
+<li>Image optimization</li>
 
-And I'm open to any suggestions that you might have, just let me know.
+Please let me know if you have any questions, or improvements.
